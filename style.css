@@ -1,5 +1,10 @@
+
 html{
     font-size: 62.5%;
+}
+
+:root{
+    --keyWidth: 423.75;
 }
 
 *{
@@ -15,12 +20,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;background-color: beige;
+    flex-direction: column;
 }
 
 .skill{
     width: 20rem;
     height: 20rem;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .outer{
@@ -52,7 +59,10 @@ circle{
     stroke-width: 2rem;
     stroke-dasharray: 565;
     stroke-dashoffset: 565;
-    animation: anim 2s forwards;
+    
+}
+.anim{
+    animation: anim 2s linear forwards;
 }
 
 svg{
@@ -62,7 +72,36 @@ svg{
 }
 
 @keyframes anim{
-    100%{
-        stroke-dashoffset: 198;
+    0%{
+        stroke-dashoffset: 565;
     }
+    100%{
+        stroke-dashoffset: var(--keyWidth);
+    }
+}
+
+
+input[type="range"]{
+    -webkit-appearance: none;
+    background: linear-gradient(90deg,#e91e63,#673ab7);
+    border-radius: 2rem;
+    height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 2rem;
+    width: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px -1px rgba(0,0,0,.3);
+
+}
+#input{
+    width: 20rem;
+    margin-bottom: .5rem;
+}
+output{
+    font-size: 2rem;
+    color: #555;
 }
